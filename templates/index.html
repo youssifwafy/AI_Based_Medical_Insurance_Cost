@@ -3,9 +3,593 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Medical Cost Estimator — Intake Chart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Special+Elite&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
   </head>
   <body>
-    <h1>Welcome To My Page</h1>
+    <div class="sheet">
+      <!-- ===== HEADER ===== -->
+      <header class="sheet-header">
+        <div class="header-left">
+          <p class="eyebrow">PATIENT INTAKE &nbsp;·&nbsp; FORM NO. 0427-MC</p>
+          <h1 class="title">Medical Cost Estimator</h1>
+          <p class="subtitle">
+            Complete every field on the chart. Your vitals log fills in on the
+            right as you go.
+          </p>
+        </div>
+        <div class="header-right">
+          <div class="folder-tab">CONFIDENTIAL</div>
+        </div>
+      </header>
+
+      <div class="layout">
+        <!-- ===== LEFT: INTAKE FORM ===== -->
+        <form id="intakeForm" class="chart-form" novalidate>
+          <fieldset class="section">
+            <legend><span class="legend-index">A</span> Demographics</legend>
+
+            <div class="field">
+              <label for="age"
+                ><span class="item-no">01</span> Age
+                <span class="unit">(years)</span></label
+              >
+              <input
+                type="number"
+                id="age"
+                name="age"
+                min="0"
+                max="120"
+                step="1"
+                required
+                placeholder="e.g. 34"
+              />
+            </div>
+
+            <div class="field">
+              <label><span class="item-no">02</span> Gender</label>
+              <div class="radio-row" role="radiogroup" aria-label="Gender">
+                <label class="radio-pill">
+                  <input type="radio" name="gender" value="0" required />
+                  <span>Male</span>
+                </label>
+                <label class="radio-pill">
+                  <input type="radio" name="gender" value="1" required />
+                  <span>Female</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="bmi"
+                ><span class="item-no">03</span> BMI
+                <span class="unit">(kg/m²)</span></label
+              >
+              <input
+                type="number"
+                id="bmi"
+                name="bmi"
+                min="10"
+                max="70"
+                step="0.1"
+                required
+                placeholder="e.g. 24.5"
+              />
+            </div>
+
+            <div class="field">
+              <label><span class="item-no">04</span> City Type</label>
+              <div class="radio-row" role="radiogroup" aria-label="City type">
+                <label class="radio-pill">
+                  <input type="radio" name="city_type" value="0" required />
+                  <span>Rural</span>
+                </label>
+                <label class="radio-pill">
+                  <input type="radio" name="city_type" value="1" required />
+                  <span>Semi-Urban</span>
+                </label>
+                <label class="radio-pill">
+                  <input type="radio" name="city_type" value="2" required />
+                  <span>Urban</span>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="section">
+            <legend>
+              <span class="legend-index">B</span> Lifestyle &amp; Risk Factors
+            </legend>
+
+            <div class="field">
+              <label><span class="item-no">05</span> Smoker</label>
+              <div class="radio-row" role="radiogroup" aria-label="Smoker">
+                <label class="radio-pill">
+                  <input type="radio" name="smoker" value="0" required />
+                  <span>No</span>
+                </label>
+                <label class="radio-pill">
+                  <input type="radio" name="smoker" value="1" required />
+                  <span>Yes</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label
+                ><span class="item-no">06</span> Physical Activity Level</label
+              >
+              <div
+                class="radio-row"
+                role="radiogroup"
+                aria-label="Physical activity level"
+              >
+                <label class="radio-pill">
+                  <input
+                    type="radio"
+                    name="physical_activity_level"
+                    value="0"
+                    required
+                  />
+                  <span>Low</span>
+                </label>
+                <label class="radio-pill">
+                  <input
+                    type="radio"
+                    name="physical_activity_level"
+                    value="1"
+                    required
+                  />
+                  <span>Medium</span>
+                </label>
+                <label class="radio-pill">
+                  <input
+                    type="radio"
+                    name="physical_activity_level"
+                    value="2"
+                    required
+                  />
+                  <span>High</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="stress_level"
+                ><span class="item-no">07</span> Stress Level
+                <span class="unit">(1–10)</span></label
+              >
+              <input
+                type="number"
+                id="stress_level"
+                name="stress_level"
+                min="1"
+                max="10"
+                step="1"
+                required
+                placeholder="e.g. 5"
+              />
+            </div>
+          </fieldset>
+
+          <fieldset class="section">
+            <legend>
+              <span class="legend-index">C</span> Medical Conditions
+            </legend>
+
+            <div class="field">
+              <label><span class="item-no">08</span> Diabetes</label>
+              <div class="radio-row" role="radiogroup" aria-label="Diabetes">
+                <label class="radio-pill">
+                  <input type="radio" name="diabetes" value="0" required />
+                  <span>No</span>
+                </label>
+                <label class="radio-pill">
+                  <input type="radio" name="diabetes" value="1" required />
+                  <span>Yes</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label><span class="item-no">09</span> Hypertension</label>
+              <div
+                class="radio-row"
+                role="radiogroup"
+                aria-label="Hypertension"
+              >
+                <label class="radio-pill">
+                  <input type="radio" name="hypertension" value="0" required />
+                  <span>No</span>
+                </label>
+                <label class="radio-pill">
+                  <input type="radio" name="hypertension" value="1" required />
+                  <span>Yes</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label><span class="item-no">10</span> Heart Disease</label>
+              <div
+                class="radio-row"
+                role="radiogroup"
+                aria-label="Heart disease"
+              >
+                <label class="radio-pill">
+                  <input type="radio" name="heart_disease" value="0" required />
+                  <span>No</span>
+                </label>
+                <label class="radio-pill">
+                  <input type="radio" name="heart_disease" value="1" required />
+                  <span>Yes</span>
+                </label>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="section">
+            <legend>
+              <span class="legend-index">D</span> Care Utilization
+            </legend>
+
+            <div class="field">
+              <label for="doctor_visits_per_year"
+                ><span class="item-no">11</span> Doctor Visits
+                <span class="unit">(per year)</span></label
+              >
+              <input
+                type="number"
+                id="doctor_visits_per_year"
+                name="doctor_visits_per_year"
+                min="0"
+                max="60"
+                step="1"
+                required
+                placeholder="e.g. 3"
+              />
+            </div>
+
+            <div class="field">
+              <label for="hospital_admissions"
+                ><span class="item-no">12</span> Hospital Admissions
+                <span class="unit">(per year)</span></label
+              >
+              <input
+                type="number"
+                id="hospital_admissions"
+                name="hospital_admissions"
+                min="0"
+                max="20"
+                step="1"
+                required
+                placeholder="e.g. 0"
+              />
+            </div>
+
+            <div class="field">
+              <label for="medication_count"
+                ><span class="item-no">13</span> Medication Count</label
+              >
+              <input
+                type="number"
+                id="medication_count"
+                name="medication_count"
+                min="0"
+                max="30"
+                step="1"
+                required
+                placeholder="e.g. 2"
+              />
+            </div>
+          </fieldset>
+
+          <fieldset class="section">
+            <legend>
+              <span class="legend-index">E</span> Coverage &amp; History
+            </legend>
+
+            <div class="field">
+              <label><span class="item-no">14</span> Insurance Type</label>
+              <div
+                class="radio-row"
+                role="radiogroup"
+                aria-label="Insurance type"
+              >
+                <label class="radio-pill">
+                  <input
+                    type="radio"
+                    name="insurance_type"
+                    value="0"
+                    required
+                  />
+                  <span>Government</span>
+                </label>
+                <label class="radio-pill">
+                  <input
+                    type="radio"
+                    name="insurance_type"
+                    value="1"
+                    required
+                  />
+                  <span>Private</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="insurance_coverage_pct"
+                ><span class="item-no">15</span> Insurance Coverage
+                <span class="unit">(%)</span></label
+              >
+              <input
+                type="number"
+                id="insurance_coverage_pct"
+                name="insurance_coverage_pct"
+                min="0"
+                max="100"
+                step="1"
+                required
+                placeholder="e.g. 70"
+              />
+            </div>
+
+            <div class="field">
+              <label for="previous_year_cost"
+                ><span class="item-no">16</span> Previous Year Cost
+                <span class="unit">($)</span></label
+              >
+              <input
+                type="number"
+                id="previous_year_cost"
+                name="previous_year_cost"
+                min="0"
+                step="1"
+                required
+                placeholder="e.g. 1500"
+              />
+            </div>
+          </fieldset>
+
+          <div class="submit-row">
+            <button type="submit" class="submit-btn">
+              Submit Chart for Estimate
+            </button>
+            <button type="reset" class="reset-btn">Clear Form</button>
+          </div>
+        </form>
+
+        <!-- ===== RIGHT: VITALS MONITOR ===== -->
+        <aside class="monitor" aria-live="polite">
+          <div class="monitor-head">
+            <span class="monitor-dot"></span>
+            <span class="monitor-label">VITALS LOG — LIVE</span>
+          </div>
+
+          <div class="gauge-wrap">
+            <svg viewBox="0 0 200 120" class="gauge" aria-hidden="true">
+              <path d="M 20 110 A 80 80 0 0 1 180 110" class="gauge-track" />
+              <path
+                id="gaugeFill"
+                d="M 20 110 A 80 80 0 0 1 180 110"
+                class="gauge-fill"
+              />
+            </svg>
+            <div class="gauge-readout">
+              <span id="riskCount">0</span><span class="gauge-of">/5</span>
+              <p class="gauge-caption">risk flags active</p>
+            </div>
+          </div>
+
+          <ul id="vitalsLog" class="vitals-log">
+            <li class="vitals-empty">— awaiting entries —</li>
+          </ul>
+
+          <div id="resultStamp" class="result-stamp hidden">
+            <div class="stamp-ring">
+              <p class="stamp-line-1">ESTIMATED</p>
+              <p class="stamp-value" id="stampValue">$0</p>
+              <p class="stamp-line-2">ANNUAL MEDICAL COST</p>
+            </div>
+          </div>
+
+          <details class="dev-details">
+            <summary>Model payload (JSON)</summary>
+            <pre id="jsonOut">{}</pre>
+          </details>
+        </aside>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        const form = document.getElementById("intakeForm");
+        const vitalsLog = document.getElementById("vitalsLog");
+        const riskCountEl = document.getElementById("riskCount");
+        const gaugeFill = document.getElementById("gaugeFill");
+        const resultStamp = document.getElementById("resultStamp");
+        const stampValue = document.getElementById("stampValue");
+        const jsonOut = document.getElementById("jsonOut");
+
+        // Human-readable labels for the live vitals log
+        const FIELD_LABELS = {
+          age: "Age",
+          gender: "Gender",
+          bmi: "BMI",
+          smoker: "Smoker",
+          diabetes: "Diabetes",
+          hypertension: "Hypertension",
+          heart_disease: "Heart Disease",
+          physical_activity_level: "Activity Level",
+          stress_level: "Stress Level",
+          doctor_visits_per_year: "Doctor Visits/yr",
+          hospital_admissions: "Hospital Admissions",
+          medication_count: "Medications",
+          insurance_type: "Insurance Type",
+          insurance_coverage_pct: "Coverage %",
+          city_type: "City Type",
+          previous_year_cost: "Previous Year Cost",
+        };
+
+        // Reverse-lookup display text for encoded categorical values
+        const VALUE_LABELS = {
+          gender: { 0: "Male", 1: "Female" },
+          smoker: { 0: "No", 1: "Yes" },
+          diabetes: { 0: "No", 1: "Yes" },
+          hypertension: { 0: "No", 1: "Yes" },
+          heart_disease: { 0: "No", 1: "Yes" },
+          physical_activity_level: { 0: "Low", 1: "Medium", 2: "High" },
+          insurance_type: { 0: "Government", 1: "Private" },
+          city_type: { 0: "Rural", 1: "Semi-Urban", 2: "Urban" },
+        };
+
+        const RISK_FIELDS = [
+          "smoker",
+          "diabetes",
+          "hypertension",
+          "heart_disease",
+        ];
+
+        function readForm() {
+          const data = {};
+          new FormData(form).forEach((value, key) => {
+            data[key] = value;
+          });
+          return data;
+        }
+
+        function renderVitals() {
+          const data = readForm();
+          const keys = Object.keys(FIELD_LABELS).filter(
+            (k) => data[k] !== undefined && data[k] !== "",
+          );
+
+          if (keys.length === 0) {
+            vitalsLog.innerHTML =
+              '<li class="vitals-empty">— awaiting entries —</li>';
+          } else {
+            vitalsLog.innerHTML = keys
+              .map((k) => {
+                const raw = data[k];
+                const display =
+                  VALUE_LABELS[k] && VALUE_LABELS[k][raw]
+                    ? VALUE_LABELS[k][raw]
+                    : raw;
+                return `<li><span class="vlabel">${FIELD_LABELS[k]}</span><span class="vvalue">${display}</span></li>`;
+              })
+              .join("");
+          }
+
+          // Risk gauge: count active risk flags + elevated stress
+          let riskCount = RISK_FIELDS.filter((k) => data[k] === "1").length;
+          if (data.stress_level && Number(data.stress_level) >= 8)
+            riskCount += 1;
+          riskCount = Math.min(riskCount, 5);
+
+          riskCountEl.textContent = riskCount;
+          const pct = riskCount / 5;
+          const dashLength = 251; // approx arc length of the gauge path
+          gaugeFill.style.strokeDashoffset = String(dashLength * (1 - pct));
+          gaugeFill.style.stroke =
+            pct <= 0.2
+              ? "var(--accent-teal)"
+              : pct <= 0.6
+                ? "var(--accent-amber)"
+                : "var(--accent-red)";
+
+          // Dev payload preview, encoded exactly as the model expects
+          jsonOut.textContent = JSON.stringify(data, null, 2);
+        }
+
+        form.addEventListener("input", renderVitals);
+        form.addEventListener("reset", () => {
+          setTimeout(() => {
+            renderVitals();
+            resultStamp.classList.add("hidden");
+            resultStamp.classList.remove("show");
+          }, 0);
+        });
+
+        // ---------------------------------------------------------------
+        // PLACEHOLDER ESTIMATE — replace with a real call to your trained
+        // scikit-learn model (e.g. a Flask/FastAPI endpoint that loads the
+        // pickled model and returns a prediction). The fields below are
+        // already encoded exactly the way your notebook encodes them.
+        //
+        // Example real integration:
+        //   const res = await fetch('/predict', {
+        //     method: 'POST',
+        //     headers: { 'Content-Type': 'application/json' },
+        //     body: JSON.stringify(payload)
+        //   });
+        //   const { predicted_cost } = await res.json();
+        // ---------------------------------------------------------------
+        function placeholderEstimate(d) {
+          const n = (v) => Number(v) || 0;
+          let cost = 800;
+          cost += n(d.age) * 18;
+          cost += n(d.bmi) * 22;
+          cost += n(d.smoker) * 2200;
+          cost += n(d.diabetes) * 950;
+          cost += n(d.hypertension) * 700;
+          cost += n(d.heart_disease) * 1600;
+          cost += n(d.stress_level) * 60;
+          cost += n(d.doctor_visits_per_year) * 90;
+          cost += n(d.hospital_admissions) * 1400;
+          cost += n(d.medication_count) * 110;
+          cost += n(d.previous_year_cost) * 0.35;
+          cost -= n(d.insurance_coverage_pct) * 8;
+          cost -= n(d.physical_activity_level) * 150;
+          return Math.max(Math.round(cost), 0);
+        }
+
+        form.addEventListener("submit", async function (e) {
+          e.preventDefault();
+          if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+          }
+          const data = readForm();
+          const submitBtn = form.querySelector(".submit-btn");
+          submitBtn.disabled = true;
+          submitBtn.textContent = "Estimating…";
+
+          let estimate;
+          try {
+            const res = await fetch("/predict", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(data),
+            });
+            const result = await res.json();
+            estimate = result.predicted_cost;
+          } catch (err) {
+            // Fallback if the backend isn't reachable
+            estimate = placeholderEstimate(data);
+          }
+
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Submit Chart for Estimate";
+
+          stampValue.textContent =
+            "$" + Number(estimate).toLocaleString("en-US");
+          resultStamp.classList.remove("hidden");
+          resultStamp.classList.remove("show");
+          void resultStamp.offsetWidth;
+          resultStamp.classList.add("show");
+        });
+
+        renderVitals();
+      })();
+    </script>
   </body>
 </html>
