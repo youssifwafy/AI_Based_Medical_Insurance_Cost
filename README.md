@@ -8,9 +8,10 @@ The project is designed for quick deployment to PythonAnywhere and uses only the
 - numpy
 - scikit-learn
 - seaborn
+- matplotlib
 - flask
 
-Model persistence uses Python's standard-library `pickle` module. Seaborn is used for all generated EDA plots.
+Model persistence uses Python's standard-library `pickle` module.
 
 ## Project Structure
 
