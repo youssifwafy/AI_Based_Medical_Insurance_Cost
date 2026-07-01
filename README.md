@@ -233,7 +233,7 @@ The scaler was **fit only on the training data** to avoid data leakage.
 | Model | R² Score | RMSE |
 |--------|---------:|------:|
 | Linear Regression | 0.9082 | 1364.40 |
-| Support Vector Regressor | -0.1257 | 4811.99 |
+| Support Vector Regressor | 0.1257 | 4811.99 |
 | Decision Tree Regressor | 0.9461 | 636.16 |
 | KNN Regressor | 0.5164 | 909.93 |
 | ⭐ Random Forest Regressor | **0.9781** | **≈1058** |
