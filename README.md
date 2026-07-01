@@ -319,17 +319,24 @@ previous_year_cost
 # 📁 Project Structure
 
 ```
-.
+AI_Based_Medical_Insurance_Cost/
 ├── app.py
-├── Preporcessing_amit.py
-├── Model_Training_amit.ipynb
-├── medical_cost_prediction_dataset.csv
 ├── model.pickle
-├── templates
-│   └── index.html
-└── README.md
+├── medical_cost_prediction_dataset.csv
+├── Preprocessing_amit.py
+├── Model_Training_amit.ipynb
+├── requirements.txt
+├── README.md
+├── LICENSE
+├── docs/
+│   ├── data_dictionary.md
+│   ├── deployment_guide.md
+│   └── model_card.md
+├── static/
+│   └── styles.css
+└── templates/
+    └── index.html
 ```
-
 ---
 
 # 🛠 Technologies Used
