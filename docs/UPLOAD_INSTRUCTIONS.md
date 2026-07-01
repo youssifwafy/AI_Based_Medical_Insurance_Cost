@@ -31,4 +31,4 @@ Fix Redesign branch documentation references
 - Replaced old notebook references from `Final_project_AMIT.ipynb` to `Model_Training_amit.ipynb`.
 - Updated the repository structure shown in the README.
 - Updated the PythonAnywhere project folder example to use the repository name instead of the branch folder name.
-- Kept `app.py`, `final_project_amit.py`, `Model_Training_amit.ipynb`, `model.pickle`, the dataset, and frontend files unchanged.
+- Kept `app.py`, `Preprocessing_amit.py`, `Model_Training_amit.ipynb`, `model.pickle`, the dataset, and frontend files unchanged.
