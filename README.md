@@ -15,7 +15,7 @@ This project is for educational and portfolio use. It is not a medical, clinical
 | File or Folder | Purpose |
 |---|---|
 | `medical_cost_prediction_dataset.csv` | Original dataset file. |
-| `final_project_amit.py` | Python preprocessing/export file. |
+| `Preporcessing_amit.py` | Python preprocessing/export file. |
 | `Model_Training_amit.ipynb` | Notebook used for model training and comparison. |
 | `model.pickle` | Saved trained model used by the Flask app. |
 | `app.py` | Flask backend for serving the web app and prediction endpoint. |
@@ -175,9 +175,6 @@ Additional documentation is available in the `docs/` folder:
 
 ## Important Notes
 
-- The original dataset remains at `medical_cost_prediction_dataset.csv`.
-- The Python preprocessing/export file remains `final_project_amit.py`.
-- The model-training notebook remains `Model_Training_amit.ipynb`.
 - The saved model expects already encoded numeric inputs.
 - `pickle` is part of Python's standard library and does not need to be installed separately.
 - Only load pickle files that you trust.
