@@ -47,4 +47,4 @@ insurance_coverage_pct, city_type, previous_year_cost
 
 - `medical_cost_prediction_dataset.csv` is the original dataset.
 - `final_project_amit.py` is the Python preprocessing/export file.
-- `Final_project_AMIT.ipynb` is the final model-training notebook.
+- `Model_Training_amit.ipynb` is the final model-training notebook.

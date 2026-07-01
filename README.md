@@ -1,6 +1,6 @@
 # AI-Based Medical Insurance Cost Prediction
 
-This repository contains a machine learning regression project for predicting `annual_medical_cost` from medical insurance cost data. It includes the original dataset, a preprocessing Python file, the final model-training notebook, a saved `pickle` model, and a Flask web application deployed on PythonAnywhere.
+This repository contains a machine learning regression project for predicting `annual_medical_cost` from medical insurance cost data. It includes the original dataset, a preprocessing Python file, the model-training notebook, a saved `pickle` model, and a Flask web application deployed on PythonAnywhere.
 
 Live app:
 
@@ -16,7 +16,7 @@ This project is for educational and portfolio use. It is not a medical, clinical
 |---|---|
 | `medical_cost_prediction_dataset.csv` | Original dataset file. |
 | `final_project_amit.py` | Python preprocessing/export file. |
-| `Final_project_AMIT.ipynb` | Final notebook used for model training and comparison. |
+| `Model_Training_amit.ipynb` | Notebook used for model training and comparison. |
 | `model.pickle` | Saved trained model used by the Flask app. |
 | `app.py` | Flask backend for serving the web app and prediction endpoint. |
 | `templates/index.html` | Frontend HTML page. |
@@ -28,12 +28,12 @@ This project is for educational and portfolio use. It is not a medical, clinical
 ## Repository Structure
 
 ```text
-AI_Based_Medical_Insurance_Cost-Redesign/
+AI_Based_Medical_Insurance_Cost/
 ├── app.py
 ├── model.pickle
 ├── medical_cost_prediction_dataset.csv
 ├── final_project_amit.py
-├── Final_project_AMIT.ipynb
+├── Model_Training_amit.ipynb
 ├── requirements.txt
 ├── README.md
 ├── LICENSE
@@ -177,7 +177,7 @@ Additional documentation is available in the `docs/` folder:
 
 - The original dataset remains at `medical_cost_prediction_dataset.csv`.
 - The Python preprocessing/export file remains `final_project_amit.py`.
-- The model-training notebook remains `Final_project_AMIT.ipynb`.
+- The model-training notebook remains `Model_Training_amit.ipynb`.
 - The saved model expects already encoded numeric inputs.
 - `pickle` is part of Python's standard library and does not need to be installed separately.
 - Only load pickle files that you trust.

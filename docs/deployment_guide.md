@@ -23,7 +23,7 @@ These files are useful for review and development:
 ```text
 medical_cost_prediction_dataset.csv
 final_project_amit.py
-Final_project_AMIT.ipynb
+Model_Training_amit.ipynb
 docs/
 README.md
 LICENSE
@@ -103,7 +103,7 @@ pip install -r requirements.txt
 ```python
 import sys
 
-project_home = "/home/YOUR_USERNAME/AI_Based_Medical_Insurance_Cost-Redesign"
+project_home = "/home/YOUR_USERNAME/AI_Based_Medical_Insurance_Cost"
 if project_home not in sys.path:
     sys.path.insert(0, project_home)
 
