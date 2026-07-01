@@ -354,7 +354,7 @@ AI_Based_Medical_Insurance_Cost/
 
 
 # 👨‍💻 Team Members
-- Youssif Wafi
+- Youssif Wafy
 - Saif Hatem
 - Mohamed Medhat
 - Ahmed Walid
