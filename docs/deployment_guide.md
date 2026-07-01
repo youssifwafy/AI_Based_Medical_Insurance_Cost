@@ -22,7 +22,7 @@ These files are useful for review and development:
 
 ```text
 medical_cost_prediction_dataset.csv
-final_project_amit.py
+Prepocessing_amit.py
 Model_Training_amit.ipynb
 docs/
 README.md
