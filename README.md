@@ -349,8 +349,8 @@ previous_year_cost
 # 👨‍💻 Authors
 - Youssif Wafi
 - Saif Hatem
-- Mohammed Medhat
-- Ahmad Walid
+- Mohamed Medhat
+- Ahmed Walid
 - Abdelrahman Noaman
 ---
 
