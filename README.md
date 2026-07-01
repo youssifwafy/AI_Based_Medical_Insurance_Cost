@@ -32,7 +32,7 @@ AI_Based_Medical_Insurance_Cost/
 ├── app.py
 ├── model.pickle
 ├── medical_cost_prediction_dataset.csv
-├── final_project_amit.py
+├── Preprocessing_amit.py
 ├── Model_Training_amit.ipynb
 ├── requirements.txt
 ├── README.md
