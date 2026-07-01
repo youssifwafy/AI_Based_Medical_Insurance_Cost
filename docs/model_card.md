@@ -22,7 +22,7 @@ It should not be used for real medical, clinical, financial, underwriting, or in
 ## Project Files
 
 - `medical_cost_prediction_dataset.csv`: original dataset.
-- `final_project_amit.py`: preprocessing/export file.
+- `Preprocessing_amit.py`: preprocessing/export file.
 - `Model_Training_amit.ipynb`: model-training notebook.
 - `model.pickle`: saved trained model used by the Flask app.
 
